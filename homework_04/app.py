@@ -49,13 +49,21 @@ async def read_items():
 async def read_item(item_id: int):
     item = next((item for item in fake_items_db if item["id"] == item_id), None)
     if item is None:
-        raise HTTPException(status_code=404, detail="Товар не найден")
+        raise HTTPException(status_code=404, detail="Item not found")
     return item
 
 
 @api_router.post("/items/", response_model=Item)
 async def create_item(item: Item):
-    fake_items_db.append(item.dict())
+    # Check for ID is unique
+    if any(existing_item["id"] == item.id for existing_item in fake_items_db):
+        raise HTTPException(
+            status_code=400,
+            detail=f"ID item {item.id} already exist",
+        )
+
+    # Append data model
+    fake_items_db.append(item.model_dump())
     return item
 
 
