@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container mt-4">
+    <h1>Домашняя работа 04</h1>
+    <h2>Задача</h2>
+    <ul>
+        <li>Скопируйте папку <code>homework_05</code> для этой домашки (<a
+                href="https://github.com/OtusTeam/BasePython/tree/homeworks">Памятка</a>)</li>
+        <li>Используйте следующие пакеты:<br />
+            <ul>
+                <li>+ FastAPI</li>
+                <li>+ uvicorn</li>
+            </ul>
+        </li>
+        <li>В модуле <code>app</code> создайте базовое FastAPI приложение<br />
+            <ul>
+                <li>+ создайте обычные представления</li>
+                <li>+ создайте index view <code>/</code></li>
+                <li>+ добавьте страницу <code>/about/</code>, добавьте туда текст, информацию о сайте и разработчике
+                </li>
+                <li>+ создайте базовый шаблон (используйте <a
+                        href="https://getbootstrap.com/docs/5.0/getting-started/introduction/#starter-template"
+                        )>https://getbootstrap.com/docs/5.0/getting-started/introduction/#starter-template</a></li>
+                <li>+ в базовый шаблон подключите статику Bootstrap 5 (подключите стили), примените стили Bootstrap</li>
+                <li>+ в базовый шаблон добавьте навигационную панель <code>nav</code>
+                    (https://getbootstrap.com/docs/5.0/components/navbar/)</li>
+                <li>± в навигационную панель добавьте ссылки на главную страницу <code>/</code> и на страницу
+                    <code>/about/</code> при помощи <code>url_for</code>
+                </li>
+                <li>+ добавьте новые зависимости в файл <code>requirements.txt</code> в корне проекта
+                    <br />(лучше вручную, но можно командой <code>pip freeze &gt; requirements.txt</code>, тогда
+                    обязательно проверьте, что туда попало, и удалите лишнее)
+                    </li>
+                    </ul>
+                    </li>
+                    <li>Создайте api представления:<br />
+                        <ul>
+                            <li>+ создайте api router, укажите префикс <code>/api</code></li>
+                <li>+ добавьте вложенный роутер для вашей сущности (если не можете придумать тип сущности, рассмотрите
+                    варианты: товар, книга, автомобиль)</li>
+                <li>+ добавьте представление для чтения списка сущностей</li>
+                <li>+ добавьте представление для чтения сущности</li>
+                <li>+ добавьте представление для создания сущности</li>
+                </ul>
+                </li>
+                </ul>
+                <h2><br />Критерии оценки:</h2>
+                <ul>
+                    <li>создано FastAPI приложение в <code>app.py</code></li>
+        <li>добавлен отдельный роутер для HTML представлений <code>/</code> и <code>/about/</code></li>
+        <li>добавлен api роутер</li>
+        <li>добавлен роутер для ваших сущностей</li>
+        <li>подключены и применены стили Bootstrap</li>
+        <li>в базовый шаблон добавлена навигационная панель</li>
+        <li>автоматический тест <code>test_homework_05</code> проходит</li>
+        </ul>
+
+</main>
+{% endblock %}
