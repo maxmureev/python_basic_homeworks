@@ -14,8 +14,8 @@ class Item(BaseModel):
     id: int
     name: str
     description: Optional[str] = None
-    price: float
-    tax: Optional[float] = None
+    numeric: int
+    sub_numeric: Optional[int] = None
 
 
 # Fake items Storage
