@@ -5,7 +5,7 @@
 #### Билд имаджа и запуск контейнера
 
 ```shell
-cd homework_03
+cd homework_05
 docker build -t my_image .
 docker run -p 8000:8000  my_image
 ```
