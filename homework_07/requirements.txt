@@ -1,0 +1,2 @@
+aiohttp
+SQLAlchemy>=1.4
