@@ -1,0 +1,17 @@
+{% extends 'my_app/base.html' %}
+
+{% block content %}
+<main class="container mt-4">
+
+
+    <h3>Добавить новый товар</h3>
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Добавить товар</button>
+    </form>
+    <a href="{% url 'products_list' %}" class="btn btn-secondary mt-3">Вернуться к списку товаров</a>
+
+
+</main>
+{% endblock %}

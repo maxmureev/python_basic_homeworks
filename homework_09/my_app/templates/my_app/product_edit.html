@@ -1,0 +1,15 @@
+{% extends 'my_app/base.html' %}
+
+{% block content %}
+<main class="container mt-4">
+
+<h3>Редактировать товар</h3>
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-sm btn-outline-primary">Сохранить изменения</button>
+        <a href="{{request.META.HTTP_REFERER}}" class="btn btn-sm btn-outline-secondary">Отмена</a>
+    </form>
+
+</main>
+{% endblock %}
