@@ -14,11 +14,16 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.12"
+
     - name: Install dependencies
       run: |
-        cd homework_12
-        pip install pytest
-    - name: Test with pytest
+        python -m pip install --upgrade pip
+        pip install -e .
+        pip install pytest pytest-django
+
+    - name: Run tests
+      env:
+        DJANGO_SETTINGS_MODULE: "homework_12.settings"
       run: |
-        cd homework_12
-        pytest -v
+        cd my_app
+        python -m pytest tests/ -v
