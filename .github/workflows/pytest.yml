@@ -17,8 +17,6 @@ jobs:
     - name: Install dependencies
       run: |
         cd homework_12
-        curl -sSL https://install.python-poetry.org | python -
-        poetry install --no-root
         pip install pytest
     - name: Test with pytest
       run: |
