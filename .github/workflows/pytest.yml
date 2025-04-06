@@ -14,16 +14,11 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.12"
-
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install -e .
-        pip install pytest pytest-django
-
-    - name: Run tests
-      env:
-        DJANGO_SETTINGS_MODULE: "homework_12.settings"
+        curl -sSL https://install.python-poetry.org | python -
+        poetry install --no-root
+    - name: Test with pytest
       run: |
-        cd my_app
-        python -m pytest tests/ -v
+        cd homework_12
+        pytest -v
