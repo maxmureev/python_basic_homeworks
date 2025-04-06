@@ -16,8 +16,10 @@ jobs:
         python-version: "3.12"
     - name: Install dependencies
       run: |
+        cd homework_12
         curl -sSL https://install.python-poetry.org | python -
         poetry install --no-root
+        poetry add --group test pytest pytest-django pytest-mock
     - name: Test with pytest
       run: |
         cd homework_12
