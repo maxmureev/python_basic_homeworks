@@ -1,0 +1,88 @@
+{
+  // Main config
+  "editor.tabSize": 4, // Global tab size
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.insertSpaces": true,
+  "files.trimFinalNewlines": true,
+  "editor.dragAndDrop": false,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.formatOnSave": true,
+  "git.ignoreSubmodules": true, // Don't show changes in submodules
+  // Start of custom rules
+  "files.associations": {
+    "*.md": "markdown",
+    "*.yml": "ansible",
+    "*.yaml": "ansible",
+    "*.j2": "jinja-properties",
+    "*.sh.j2": "jinja-shell",
+    "*.xml.j2": "jinja-xml",
+    "*.yml.j2": "jinja-yaml",
+    "*.yaml.j2": "jinja-yaml",
+    "*.html.j2": "jinja-html",
+    "*.json.j2": "jinja-json",
+    "*.conf.j2": "jinja-properties",
+    "*.service": "editorconfig",
+    ".gitmodules": "editorconfig",
+    "*.service.j2": "editorconfig",
+    "*.ansible-lint": "yaml"
+  },
+  // ansible
+  "ansible.executionEnvironment.enabled": true,
+  "ansible.lightspeed.enabled": false,
+  "ansible.ansible.useFullyQualifiedCollectionNames": false,
+  "ansible.ansible.reuseTerminal": true,
+  "ansible.validation.enabled": true,
+  "ansible.validation.lint.enabled": true,
+  "ansible.executionEnvironment.containerEngine": "docker",
+  "ansible.executionEnvironment.image": "ghcr.io/ansible/community-ansible-dev-tools:latest",
+  "[ansible]": {
+    "editor.detectIndentation": true,
+    "editor.tabSize": 2, // Ansible extention tab size
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file" // Format only saved file
+  },
+  // shellcheck
+  "shellcheck.run": "onType",
+  "shellcheck.enable": true,
+  "shellcheck.enableQuickFix": false,
+  "shellcheck.useWorkspaceRootAsCwd": true,
+  //  shellscript
+  "[shellscript]": {
+    "editor.renderWhitespace": "boundary",
+    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "editor.formatOnSave": true
+  },
+  // yaml
+  "yaml.completion": true,
+  "yaml.validate": true,
+  "yaml.format.bracketSpacing": true,
+  // "yaml.keyOrdering": true,
+  "yaml.customTags": [
+    "!vault scalar"
+  ],
+  "[yaml]": {
+    "editor.tabSize": 2,
+    "editor.formatOnType": true
+  },
+  // markdown
+  "editor.codeActionsOnSave": {
+    "source.fixAll.markdownlint": "explicit",
+    "source.fixAll.ansible": "explicit"
+  },
+  "markdownlint.config": {
+    "default": true,
+    "no-hard-tabs": true,
+    "allow_different_nesting": true,
+    "markdownlint.run": true,
+    "MD003": {
+      "style": "atx"
+    }
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+    // End of custom rules
+  },
+  "ansible.python.interpreterPath": "/usr/bin/python3"
+}

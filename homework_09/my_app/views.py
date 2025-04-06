@@ -5,7 +5,6 @@ from .models import Product
 from .forms import ProductModelForm
 
 
-# Create your views here.
 def index(request):
     return render(request, "my_app/index.html")
 
@@ -20,7 +19,7 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     context = {
         "product": product,
-        "product_fields": model_to_dict(product),  # Добавлено
+        "product_fields": model_to_dict(product),
     }
     return render(request, "my_app/product_detail.html", context=context)
 
