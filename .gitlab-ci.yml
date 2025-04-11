@@ -1,0 +1,21 @@
+image: python:3.12
+
+stages:
+  - build
+
+build:
+  stage: build
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: 'on_success'
+    - if: '$CI_MERGE_REQUEST_ID'
+      when: 'manual'
+  before_script:
+    - apt-get update && apt-get install -y curl
+    - curl -sSL https://install.python-poetry.org | python -
+    - export PATH="$HOME/.local/bin:$PATH"
+    - cd homework_13
+    - poetry install --no-root
+  script:
+    - cd homework_13
+    - poetry run pytest -v
