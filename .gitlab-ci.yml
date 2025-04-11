@@ -17,5 +17,4 @@ build:
     - cd homework_13
     - poetry install --no-root
   script:
-    - cd homework_13
     - poetry run pytest -v
